@@ -52,15 +52,15 @@ print("X is of size %d times %d..\n" %(N,p))
 # ### Use GPR to estimate parameters $w$ from data $(X,Y)$
 # > ### $y_i = x_i^T w + \epsilon$
 # > ### where $\epsilon$ is measurement noise $\sim \mathcal{N}(0, \sigma_n^2)$.
-# %% [markdown]
+#
 # ### In terms of the data matrices, 
 # > ### $Y = X \cdot w + e$ 
 # > ### Given $X$ and $w$, the probability distribution of $Y$ (likelihood function) can be obtained as 
 # >> ### $p(Y|X,w) \sim \mathcal{N}(X \cdot w, \sigma_n^2 \cdot I)$.
-# %% [markdown]
+#
 # ### Also we can assume some prior distribution for the parameters $w$ which reflects available information on the parameters (in case no prior information is available, we may set them to be zero-mean with large variance),
 # > ### $p(w) \sim \mathcal{N}(0,\Sigma_p)$
-# %% [markdown]
+#
 # ### We can use Bayes theorem to compute the posterior probability distribution given the prior and the likelihood,
 # > ### $\mbox{posterior} = \frac{\mbox{likelihood} \times \mbox{prior}}{\mbox{marginal likelihood}} $
 # > ### or,
@@ -71,12 +71,12 @@ print("X is of size %d times %d..\n" %(N,p))
 # > ### or,
 # > ### $p(w|X,Y) \sim \mathcal{N}(\bar{w}, A^{-1})$,
 # > ### where $A = \left( \frac{1}{\sigma_n^2} X^T X + \Sigma_p^{-1} \right)$, $\bar{w} = \frac{1}{\sigma_n^2} A^{-1} X^T Y$.
-# %% [markdown]
+#
 # ### Estimate of the weight vector can be taken as $\bar{w}$ and the variance (uncertainty) associated with it given by $A^{-1}$.
-# %% [markdown]
+#
 # ### Prediction (at point $x_*$): 
 # > ### $p(f(x_*)|X,Y) \sim \mathcal{N}(x_*^T \bar{w}, x_*^T A^{-1} x_*)$
-# %% [markdown]
+#
 # ### Estimate of the value at a test point $x_*$ can be taken as $x_*^T \bar{w}$ and the variance (uncertainty) associated with it given by $x_*^T A^{-1} x_*$.
 
 # %% [markdown]
@@ -124,10 +124,10 @@ print("Value y=f(xs) true: %.2f..\n" %(fxs_true))
 
 # ### This can be extended in a straight-forward way to the case the features are nonlinear,
 # > ### $y_i = \phi(x_i)^T w + \epsilon$.
-# %% [markdown]
+#
 # ### In terms of data matrices,
 # > ### $Y = \Phi(X)^T w + e$.
-# %% [markdown]
+#
 # ### In this case,
 # > ### $p(f(x_*)|X,Y) \sim \mathcal{N}(\phi(x_*)^T \bar{w}, \phi(x_*)^T A^{-1} \phi(x_*))$
 # > ### where $A = \left( \frac{1}{\sigma_n^2} \Phi(X)^T \Phi(X) + \Sigma_p^{-1} \right)$, $\bar{w} = \frac{1}{\sigma_n^2} A^{-1} \Phi(X)^T Y$.
