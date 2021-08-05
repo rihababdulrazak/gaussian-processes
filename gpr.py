@@ -27,7 +27,7 @@ for i in range(p):
 	w[i] = rand.random()  # random values b/w 0 and 1.
 
 # generate data
-N = 100  # no.of data points
+N = 50  # no.of data points
 
 # noise
 rand.seed(2)  # set seed for noise.
