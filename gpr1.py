@@ -7,7 +7,7 @@ import numpy.random as rand
 
 # %% [markdown]
 
-# ## This notebook is about Gaussian Process Regression (GPR)
+# ## This notebook is about Bayesian regression assuming Gaussian distribution
 
 # %% [markdown]
 
@@ -62,7 +62,7 @@ print("X is of size %d times %d..\n" %(N,p))
 # > ### $p(w) \sim \mathcal{N}(0,\Sigma_p)$
 #
 # ### We can use Bayes theorem to compute the posterior probability distribution given the prior and the likelihood,
-# > ### $\mbox{posterior} = \frac{\mbox{likelihood} \times \mbox{prior}}{\mbox{marginal likelihood}} $
+# > ### $\text{posterior} = \frac{\text{likelihood} \times \text{prior}}{\text{marginal likelihood}} $
 # > ### or,
 # > ### $p(w|Y,X) = \frac{p(Y|X,w) \cdot p(w)}{p(Y|X)}$
 # > ### The denominator is independent of $w$ and acts like a normalization factor. 
