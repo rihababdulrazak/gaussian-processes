@@ -226,7 +226,7 @@ Image(filename='algo.jpg',width=1000, height=600)
 # %%
 
 # loading the dataset
-filename = 'GPR with scikitlearn/Dataset 1'
+filename = 'Datasets/Dataset 1'
 input_df = pd.read_csv(r'{}.csv'.format(filename), low_memory=False)
 
 input_df = input_df.drop(columns=['Unnamed: 0'])
